@@ -1,0 +1,20 @@
+p {
+    color: white; 
+  }
+  h1 {
+    color: white; /* Hex code for orange */
+  }
+  
+
+
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the whole screen while maintaining aspect ratio */
+    z-index: -1; /* Places the video behind other content */
+  }
+  
