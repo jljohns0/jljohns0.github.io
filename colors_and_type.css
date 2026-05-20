@@ -1,0 +1,230 @@
+/*
+ * Jeffery Johnson Portfolio — Design Tokens
+ * Derived from the HTML5 UP "Dimension" SCSS variables used at jefferyleejohnson.com
+ *
+ * Aesthetic: nocturnal, IT/sysadmin-coded. Crisp white text on near-black, all
+ * caps headers with wide letter-spacing, hairline rules. Background is a full-
+ * bleed photo with a translucent overlay grain. Buttons and inputs are
+ * outlined-only with a single accent: invert-to-white for primary.
+ */
+
+/* ─── Web fonts ─── */
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  font-style: normal;
+  src: url("https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  font-style: italic;
+  src: url("https://fonts.gstatic.com/s/sourcesanspro/v22/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7ksDtAuWQ.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-style: normal;
+  src: url("https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g5DRj9w.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-style: italic;
+  src: url("https://fonts.gstatic.com/s/sourcesanspro/v22/6xK1dSBYKcSV-LCoeQqfX1RYOo3qPZ7psjlAuWQ.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* ─── Tokens ─── */
+
+:root {
+  /* Palette — direct from _vars.scss */
+  --color-bg:            #1b1f22;             /* deep slate (page) */
+  --color-bg-alt:        #000000;             /* black (preload) */
+  --color-bg-overlay:    rgba(19, 21, 25, 0.5);
+  --color-card:          rgba(27, 31, 34, 0.85); /* article panel — bg @ 85% */
+
+  --color-fg:            #ffffff;
+  --color-fg-bold:       #ffffff;
+  --color-fg-light:      rgba(255, 255, 255, 0.5); /* dotted underlines, placeholder */
+  --color-fg-mute:       rgba(255, 255, 255, 0.35);
+
+  --color-border:        #ffffff;             /* hairline rules, button strokes */
+  --color-border-bg:     rgba(255, 255, 255, 0.075); /* hover wash, code chip bg */
+  --color-border-bg-alt: rgba(255, 255, 255, 0.175); /* active state */
+
+  /* Type */
+  --font-family:        "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-fixed:  "Courier New", ui-monospace, Menlo, monospace;
+  --font-weight:        300;
+  --font-weight-bold:   600;
+  --letter-spacing:         0.2rem;   /* body caps, buttons, nav, labels */
+  --letter-spacing-heading: 0.5rem;   /* h1/h2 caps */
+
+  /* Sizing & rhythm */
+  --radius:        4px;
+  --border-width:  1px;
+  --element-h:     2.75rem;  /* buttons, inputs, nav cells */
+  --element-margin: 2rem;
+
+  /* Duration */
+  --dur-transition: 0.2s;
+  --dur-bg:         2.5s;
+  --dur-intro:      0.75s;
+  --dur-article:    0.325s;
+
+  /* Semantic / role tokens */
+  --bg-page:    var(--color-bg);
+  --bg-card:    var(--color-card);
+  --bg-hover:   var(--color-border-bg);
+  --bg-active:  var(--color-border-bg-alt);
+  --bg-code:    var(--color-border-bg);
+
+  --text-primary:   var(--color-fg);
+  --text-strong:    var(--color-fg-bold);
+  --text-muted:     var(--color-fg-light);
+  --text-link-rule: var(--color-fg-light);
+
+  --rule:          var(--color-border);
+  --focus-ring:    var(--color-fg-bold);
+
+  /* The signature backdrop — a tinted photo with the grain overlay on top.
+     Use `background-image: var(--bg-stage)` on a fixed full-bleed div. */
+  --bg-stage:
+    linear-gradient(var(--color-bg-overlay), var(--color-bg-overlay)),
+    url("assets/images/overlay.png"),
+    url("assets/images/bg.jpg");
+  --bg-stage-size:     auto, 256px 256px, cover;
+  --bg-stage-position: center, center, center;
+  --bg-stage-repeat:   no-repeat, repeat, no-repeat;
+}
+
+/* ─── Base type ─── */
+
+html {
+  font-size: 16pt; /* matches _typography.scss baseline */
+}
+@media (max-width: 1280px) { html { font-size: 12pt; } }
+@media (max-width: 736px)  { html { font-size: 11pt; } }
+@media (max-width: 360px)  { html { font-size: 10pt; } }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ─── Semantic type roles ─── */
+
+.h1, h1 {
+  color: var(--text-strong);
+  font-weight: var(--font-weight-bold);
+  font-size: 2.25rem;
+  line-height: 1.3;
+  letter-spacing: var(--letter-spacing-heading);
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.h2, h2 {
+  color: var(--text-strong);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  letter-spacing: var(--letter-spacing-heading);
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.h3, h3 {
+  color: var(--text-strong);
+  font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: var(--letter-spacing);
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.h4, h4 { font-size: 0.8rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing); line-height: 1.5; margin: 0 0 1rem 0; }
+.h5, h5 { font-size: 0.7rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing); }
+.h6, h6 { font-size: 0.6rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: var(--letter-spacing); }
+
+/* The "major" treatment: hairline rule under a max-content heading.
+   Used on every section header in the portfolio. */
+.major {
+  border-bottom: solid var(--border-width) var(--rule);
+  width: max-content;
+  max-width: 100%;
+  padding-bottom: 0.5rem;
+  margin-bottom: var(--element-margin);
+}
+
+.p, p {
+  margin: 0 0 var(--element-margin) 0;
+}
+
+/* Tiny-caps utility — the deck-style p in the header inner */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  font-size: 0.8rem;
+  line-height: 2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: dotted 1px var(--text-link-rule);
+  transition:
+    color           var(--dur-transition) ease-in-out,
+    background-color var(--dur-transition) ease-in-out,
+    border-bottom-color var(--dur-transition) ease-in-out;
+}
+a:hover { border-bottom-color: transparent; }
+
+strong, b {
+  color: var(--text-strong);
+  font-weight: var(--font-weight-bold);
+}
+
+em, i { font-style: italic; }
+
+blockquote {
+  border-left: solid calc(var(--border-width) * 4) var(--rule);
+  font-style: italic;
+  margin: 0 0 var(--element-margin) 0;
+  padding: 0.5rem 0 0.5rem var(--element-margin);
+}
+
+code {
+  background: var(--bg-code);
+  border-radius: var(--radius);
+  font-family: var(--font-family-fixed);
+  font-size: 0.9rem;
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.65rem;
+}
+
+pre code {
+  display: block;
+  line-height: 1.75;
+  padding: 1rem 1.5rem;
+  overflow-x: auto;
+}
+
+hr {
+  border: 0;
+  border-bottom: solid var(--border-width) var(--rule);
+  margin: 2.75rem 0;
+}
+
+/* Selection — invert */
+::selection { background: var(--color-fg-bold); color: var(--color-bg); }
