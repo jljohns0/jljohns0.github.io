@@ -54,7 +54,7 @@ function Hero() {
         <div className="hero-cta">
           <a className="btn primary" href="#contact"><i className="fas fa-paper-plane" /> Initiate Contact</a>
           <a className="btn" href="#experience"><i className="fas fa-terminal" /> Inspect Record</a>
-          <a className="btn" href="uploads/Jeffery L Johnson - Resume.pdf" target="_blank" rel="noreferrer"><i className="fas fa-download" /> Resume.pdf</a>
+          <a className="btn" href="uploads/resume.pdf" target="_blank" rel="noreferrer"><i className="fas fa-download" /> Resume.pdf</a>
         </div>
       </div>
 
