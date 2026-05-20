@@ -322,7 +322,7 @@ function Education() {
           <span className="level">// degree.01 — undergraduate</span>
           <h3>Bachelor of Science in Information Technology</h3>
           <div className="school">Southern New Hampshire University • Manchester, NH</div>
-          <div className="conc">Concentration: General IT</div>
+          <div className="conc">Concentration: Information Technology</div>
         </Reveal>
         <Reveal className="edu-card" delay={120}>
           <div className="arc" />
